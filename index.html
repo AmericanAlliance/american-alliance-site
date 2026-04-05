@@ -92,16 +92,31 @@
         </div>
       </div>
 
+      <nav style="display: flex; gap: 24px; align-items: center; flex-wrap: wrap;">
+        <a href="#manifesto" style="color: #0d2d62; text-decoration: none; font-weight: bold;">Manifesto</a>
+        <a href="#stances" style="color: #0d2d62; text-decoration: none; font-weight: bold;">Stances</a>
+        <a href="#join" style="color: #0d2d62; text-decoration: none; font-weight: bold;">Get Involved</a>
+        <a href="https://discord.gg/nytSThatG" target="_blank" style="background: #c62839; color: white; text-decoration: none; font-weight: bold; padding: 10px 16px; border-radius: 10px;">
+          Join Discord
+        </a>
+      </nav>
      <nav style="display: flex; gap: 24px; align-items: center; flex-wrap: wrap; position: relative;">
 
-  <div id="stancesDropdown" style="display: none; position: absolute; top: 30px; left: 0; background: white; border: 1px solid #ddd; border-radius: 10px; padding: 10px; min-width: 200px;">
-  <div onclick="showTab('economy')" style="padding: 8px; cursor: pointer;">Economy</div>
-  <div onclick="showTab('foreign')" style="padding: 8px; cursor: pointer;">Foreign Policy</div>
-  <div onclick="showTab('infrastructure')" style="padding: 8px; cursor: pointer;">Infrastructure</div>
-  <div onclick="showTab('social')" style="padding: 8px; cursor: pointer;">Social Issues</div>
-  <div onclick="showTab('healthcare')" style="padding: 8px; cursor: pointer;">Healthcare</div>
-  <div onclick="showTab('immigration')" style="padding: 8px; cursor: pointer;">Immigration</div>
-</div>
+  <!-- STANCES DROPDOWN -->
+  <div style="position: relative;">
+    <span style="color: #0d2d62; font-weight: bold; cursor: pointer;" onclick="toggleDropdown()">
+      Stances ▼
+    </span>
+
+    <div id="stancesDropdown" style="display: none; position: absolute; top: 30px; left: 0; background: white; border: 1px solid #ddd; border-radius: 10px; padding: 10px; min-width: 200px;">
+      <div onclick="showTab('economy')" style="padding: 8px; cursor: pointer;">Economy</div>
+      <div onclick="showTab('healthcare')" style="padding: 8px; cursor: pointer;">Healthcare</div>
+      <div onclick="showTab('education')" style="padding: 8px; cursor: pointer;">Education</div>
+      <div onclick="showTab('environment')" style="padding: 8px; cursor: pointer;">Environment</div>
+      <div onclick="showTab('rights')" style="padding: 8px; cursor: pointer;">Rights & Freedoms</div>
+      <div onclick="showTab('foreign')" style="padding: 8px; cursor: pointer;">Foreign Policy</div>
+      <div onclick="showTab('flyer')" style="padding: 8px; cursor: pointer;">Flyer</div>
+    </div>
   </div>
 
   <!-- FLYER LINK -->
@@ -135,6 +150,12 @@
   We bring together Americans from the right, left, and middle around the issues that actually
   affect everyday life, and the belief that common sense solutions still exist.
 </p>
+        <div class="buttons">
+         <a class="primary" href="#manifesto">Read Our Manifesto</a>
+<a href="#stances">See Our Positions</a>
+<a href="https://discord.gg/nytSThatG" target="_blank">Join the Movement</a>
+      </div>
+
       
       <div class="card">
         <h3>Core Principles</h3>
@@ -226,78 +247,68 @@
   </footer>
 
   <script>
-const tabData = {
-  economy: {
-    title: "Economy",
-    text: "Add your economic stance here."
-  },
+    const tabData = {
+      economy: {
+        title: "Economy",
+        text: "Add your position on jobs, wages, taxes, and cost of living here."
+      },
+      healthcare: {
+        title: "Healthcare",
+        text: "Add your position on affordability, access, insurance, and public health here."
+      },
+      education: {
+        title: "Education",
+        text: "Add your position on schools, college, student debt, and training here."
+      },
+      environment: {
+        title: "Environment",
+        text: "Add your position on energy, infrastructure, conservation, and climate here."
+      },
+      rights: {
+        title: "Rights & Freedoms",
+        text: "Add your position on civil liberties, privacy, equality, and constitutional rights here."
+      },
+      foreign: {
+        title: "Foreign Policy",
+        text: "Add your position on diplomacy, defense, trade, and alliances here."
+      }, flyer: {
+  title: "Printable Flyer",
+  text: `
+    <div style="background: white; border: 2px solid #111; padding: 30px; max-width: 700px; margin: 0 auto;">
+      <h2 style="text-align: center; margin-top: 0; font-size: 34px;">American Alliance</h2>
+      <p style="text-align: center; font-size: 18px; margin-top: -5px;">Uniting for Tomorrow</p>
 
-  foreign: {
-    title: "Foreign Policy",
-    text: "Add your foreign policy stance here."
-  },
+      <p style="font-size: 18px; line-height: 1.6; text-align: center;">
+        A growing movement for common sense governance, affordability, accountability,
+        and common ground over division.
+      </p>
 
-  infrastructure: {
-    title: "Infrastructure",
-    text: "Add your infrastructure stance here."
-  },
+      <ul style="font-size: 18px; line-height: 1.8;">
+        <li>Move beyond the two-party deadlock</li>
+        <li>Put affordability first</li>
+        <li>Hold the powerful accountable</li>
+        <li>Avoid pointless foreign conflicts</li>
+        <li>Build a government that serves the people</li>
+      </ul>
 
-  social: {
-    title: "Social Issues",
-    text: "Add your social stance here."
-  },
+      <p style="text-align: center; font-size: 18px; font-weight: bold;">
+        Join the movement:
+      </p>
 
-  healthcare: {
-    title: "Healthcare",
-    text: "Add your healthcare stance here."
-  },
-
-  immigration: {
-    title: "Immigration",
-    text: "Add your immigration stance here."
-  },
-
-  flyer: {
-    title: "Printable Flyer",
-    text: `
-      <div style="background: white; border: 2px solid #111; padding: 30px; max-width: 700px; margin: 0 auto;">
-        <h2 style="text-align: center; margin-top: 0; font-size: 34px;">American Alliance</h2>
-        <p style="text-align: center; font-size: 18px; margin-top: -5px;">Uniting for Tomorrow</p>
-
-        <p style="font-size: 18px; line-height: 1.6; text-align: center;">
-          A growing movement for common sense governance, affordability, accountability,
-          and common ground over division.
-        </p>
-
-        <ul style="font-size: 18px; line-height: 1.8;">
-          <li>Move beyond the two-party deadlock</li>
-          <li>Put affordability first</li>
-          <li>Hold the powerful accountable</li>
-          <li>Avoid pointless foreign conflicts</li>
-          <li>Build a government that serves the people</li>
-        </ul>
-
-        <p style="text-align: center; font-size: 18px; font-weight: bold;">
-          Join the movement:
-        </p>
-
-        <div style="text-align: center; margin: 20px 0;">
-          <img src="flyer.png" alt="American Alliance QR Code" style="max-width: 220px; width: 100%; height: auto;" />
-        </div>
-
-        <p style="text-align: center; font-size: 16px;">
-          theamericaalliance.org
-        </p>
-
-        <div style="text-align: center; margin-top: 25px;">
-          <button onclick="window.print()" style="background: #1b3a6b; color: white; border: none; padding: 12px 18px; border-radius: 10px; font-size: 16px; cursor: pointer;">
-            Print Flyer
-          </button>
-        </div>
+      <div style="text-align: center; margin: 20px 0;">
+        <img src="flyer.png" alt="American Alliance QR Code" style="max-width: 220px; width: 100%; height: auto;" />
       </div>
-    `
-  }
-};
+
+      <p style="text-align: center; font-size: 16px;">
+        theamericaalliance.org
+      </p>
+
+      <div style="text-align: center; margin-top: 25px;">
+        <button onclick="window.print()" style="background: #1b3a6b; color: white; border: none; padding: 12px 18px; border-radius: 10px; font-size: 16px; cursor: pointer;">
+          Print Flyer
+        </button>
+      </div>
+    </div>
   `
 }
     };
