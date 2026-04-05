@@ -94,21 +94,14 @@
 
      <nav style="display: flex; gap: 24px; align-items: center; flex-wrap: wrap; position: relative;">
 
-  <!-- STANCES DROPDOWN -->
-  <div style="position: relative;">
-    <span style="color: #0d2d62; font-weight: bold; cursor: pointer;" onclick="toggleDropdown()">
-      Stances ▼
-    </span>
-
-    <div id="stancesDropdown" style="display: none; position: absolute; top: 30px; left: 0; background: white; border: 1px solid #ddd; border-radius: 10px; padding: 10px; min-width: 200px;">
-      <div onclick="showTab('economy')" style="padding: 8px; cursor: pointer;">Economy</div>
-      <div onclick="showTab('healthcare')" style="padding: 8px; cursor: pointer;">Healthcare</div>
-      <div onclick="showTab('education')" style="padding: 8px; cursor: pointer;">Education</div>
-      <div onclick="showTab('environment')" style="padding: 8px; cursor: pointer;">Environment</div>
-      <div onclick="showTab('rights')" style="padding: 8px; cursor: pointer;">Rights & Freedoms</div>
-      <div onclick="showTab('foreign')" style="padding: 8px; cursor: pointer;">Foreign Policy</div>
-      <div onclick="showTab('flyer')" style="padding: 8px; cursor: pointer;">Flyer</div>
-    </div>
+  <div id="stancesDropdown" style="display: none; position: absolute; top: 30px; left: 0; background: white; border: 1px solid #ddd; border-radius: 10px; padding: 10px; min-width: 200px;">
+  <div onclick="showTab('economy')" style="padding: 8px; cursor: pointer;">Economy</div>
+  <div onclick="showTab('foreign')" style="padding: 8px; cursor: pointer;">Foreign Policy</div>
+  <div onclick="showTab('infrastructure')" style="padding: 8px; cursor: pointer;">Infrastructure</div>
+  <div onclick="showTab('social')" style="padding: 8px; cursor: pointer;">Social Issues</div>
+  <div onclick="showTab('healthcare')" style="padding: 8px; cursor: pointer;">Healthcare</div>
+  <div onclick="showTab('immigration')" style="padding: 8px; cursor: pointer;">Immigration</div>
+</div>
   </div>
 
   <!-- FLYER LINK -->
@@ -234,29 +227,35 @@
 
   <script>
     const tabData = {
-      economy: {
-        title: "Economy",
-        text: "Add your position on jobs, wages, taxes, and cost of living here."
-      },
-      healthcare: {
-        title: "Healthcare",
-        text: "Add your position on affordability, access, insurance, and public health here."
-      },
-      education: {
-        title: "Education",
-        text: "Add your position on schools, college, student debt, and training here."
-      },
-      environment: {
-        title: "Environment",
-        text: "Add your position on energy, infrastructure, conservation, and climate here."
-      },
-      rights: {
-        title: "Rights & Freedoms",
-        text: "Add your position on civil liberties, privacy, equality, and constitutional rights here."
-      },
-      foreign: {
-        title: "Foreign Policy",
-        text: "Add your position on diplomacy, defense, trade, and alliances here."
+economy: {
+  title: "Economy",
+  text: "Add your economic stance here."
+},
+
+foreign: {
+  title: "Foreign Policy",
+  text: "Add your foreign policy stance here."
+},
+
+infrastructure: {
+  title: "Infrastructure",
+  text: "Add your infrastructure stance here."
+},
+
+social: {
+  title: "Social Issues",
+  text: "Add your social stance here."
+},
+
+healthcare: {
+  title: "Healthcare",
+  text: "Add your healthcare stance here."
+},
+
+immigration: {
+  title: "Immigration",
+  text: "Add your immigration stance here."
+}
       }, flyer: {
   title: "Printable Flyer",
   text: `
