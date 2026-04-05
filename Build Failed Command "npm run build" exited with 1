@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>American Alliance</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      color: #111;
+    }
+    header {
+      background: white;
+      border-bottom: 1px solid #ddd;
+      padding: 20px;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    nav a {
+      margin-right: 18px;
+      color: #111;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .hero, .section {
+      padding: 50px 0;
+    }
+    .card {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 14px;
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+    .buttons a, .tab-button {
+      display: inline-block;
+      margin: 8px 8px 0 0;
+      padding: 12px 16px;
+      border-radius: 10px;
+      text-decoration: none;
+      border: 1px solid #ccc;
+      background: white;
+      color: #111;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    .buttons a.primary {
+      background: #111;
+      color: white;
+      border-color: #111;
+    }
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+    .tab-content {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 14px;
+      padding: 24px;
+    }
+    footer {
+      background: #111;
+      color: white;
+      padding: 40px 0;
+      margin-top: 30px;
+    }
+    footer a {
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>American Alliance</h1>
+      <nav>
+        <a href="#manifesto">Manifesto</a>
+        <a href="#stances">Stances</a>
+        <a href="#join">Get Involved</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="card">
+        <h2>A clear message, a public manifesto, and issue-based stances.</h2>
+        <p>
+          American Alliance exists to bring together disenfranchised voters from
+          the right, left, and middle around the biggest issues facing the country.
+        </p>
+        <div class="buttons">
+          <a class="primary" href="#manifesto">Read the Manifesto</a>
+          <a href="#stances">Explore Stances</a>
+          <a href="https://discord.gg/nytSThatG" target="_blank">Join the Discord</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Core Principles</h3>
+        <ul>
+          <li>National unity</li>
+          <li>Honest government</li>
+          <li>Economic fairness</li>
+          <li>Common-ground politics</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="manifesto" class="section">
+      <div class="card">
+        <h2>Manifesto</h2>
+        <p>(Write your manifesto here later.)</p>
+      </div>
+    </section>
+
+    <section id="stances" class="section">
+      <h2>Where We Stand</h2>
+
+      <div class="tabs">
+        <button class="tab-button" onclick="showTab('economy')">Economy</button>
+        <button class="tab-button" onclick="showTab('healthcare')">Healthcare</button>
+        <button class="tab-button" onclick="showTab('education')">Education</button>
+        <button class="tab-button" onclick="showTab('environment')">Environment</button>
+        <button class="tab-button" onclick="showTab('rights')">Rights & Freedoms</button>
+        <button class="tab-button" onclick="showTab('foreign')">Foreign Policy</button>
+      </div>
+
+      <div id="tab-content" class="tab-content">
+        <h3>Economy</h3>
+        <p>Add your position on jobs, wages, taxes, and cost of living here.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer id="join">
+    <div class="container">
+      <h2>Get Involved</h2>
+      <p>Join the community and help shape the platform.</p>
+      <p><a href="https://discord.gg/nytSThatG" target="_blank">Join our Discord</a></p>
+    </div>
+  </footer>
+
+  <script>
+    const tabData = {
+      economy: {
+        title: "Economy",
+        text: "Add your position on jobs, wages, taxes, and cost of living here."
+      },
+      healthcare: {
+        title: "Healthcare",
+        text: "Add your position on affordability, access, insurance, and public health here."
+      },
+      education: {
+        title: "Education",
+        text: "Add your position on schools, college, student debt, and training here."
+      },
+      environment: {
+        title: "Environment",
+        text: "Add your position on energy, infrastructure, conservation, and climate here."
+      },
+      rights: {
+        title: "Rights & Freedoms",
+        text: "Add your position on civil liberties, privacy, equality, and constitutional rights here."
+      },
+      foreign: {
+        title: "Foreign Policy",
+        text: "Add your position on diplomacy, defense, trade, and alliances here."
+      }
+    };
+
+    function showTab(key) {
+      const tab = tabData[key];
+      document.getElementById("tab-content").innerHTML =
+        "<h3>" + tab.title + "</h3><p>" + tab.text + "</p>";
+    }
+  </script>
+</body>
+</html>
