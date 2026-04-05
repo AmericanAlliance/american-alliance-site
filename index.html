@@ -190,14 +190,15 @@
     <section id="stances" class="section">
       <h2>Where We Stand</h2>
 
-      <div class="tabs">
-        <button class="tab-button" onclick="showTab('economy')">Economy</button>
-        <button class="tab-button" onclick="showTab('healthcare')">Healthcare</button>
-        <button class="tab-button" onclick="showTab('education')">Education</button>
-        <button class="tab-button" onclick="showTab('environment')">Environment</button>
-        <button class="tab-button" onclick="showTab('rights')">Rights &amp; Freedoms</button>
-        <button class="tab-button" onclick="showTab('foreign')">Foreign Policy</button>
-      </div>
+     <div class="tabs">
+  <button class="tab-button" onclick="showTab('economy')">Economy</button>
+  <button class="tab-button" onclick="showTab('healthcare')">Healthcare</button>
+  <button class="tab-button" onclick="showTab('education')">Education</button>
+  <button class="tab-button" onclick="showTab('environment')">Environment</button>
+  <button class="tab-button" onclick="showTab('rights')">Rights &amp; Freedoms</button>
+  <button class="tab-button" onclick="showTab('foreign')">Foreign Policy</button>
+  <button class="tab-button" onclick="showTab('flyer')">Flyer</button>
+</div>
 
       <div id="tab-content" class="tab-content">
         <h3>Economy</h3>
@@ -239,14 +240,58 @@
       foreign: {
         title: "Foreign Policy",
         text: "Add your position on diplomacy, defense, trade, and alliances here."
-      }
+      }, flyer: {
+  title: "Printable Flyer",
+  text: `
+    <div style="background: white; border: 2px solid #111; padding: 30px; max-width: 700px; margin: 0 auto;">
+      <h2 style="text-align: center; margin-top: 0; font-size: 34px;">American Alliance</h2>
+      <p style="text-align: center; font-size: 18px; margin-top: -5px;">Uniting for Tomorrow</p>
+
+      <p style="font-size: 18px; line-height: 1.6; text-align: center;">
+        A growing movement for common sense governance, affordability, accountability,
+        and common ground over division.
+      </p>
+
+      <ul style="font-size: 18px; line-height: 1.8;">
+        <li>Move beyond the two-party deadlock</li>
+        <li>Put affordability first</li>
+        <li>Hold the powerful accountable</li>
+        <li>Avoid pointless foreign conflicts</li>
+        <li>Build a government that serves the people</li>
+      </ul>
+
+      <p style="text-align: center; font-size: 18px; font-weight: bold;">
+        Join the movement:
+      </p>
+
+      <div style="text-align: center; margin: 20px 0;">
+        <img src="flyer-qr.png" alt="American Alliance QR Code" style="max-width: 220px; width: 100%; height: auto;" />
+      </div>
+
+      <p style="text-align: center; font-size: 16px;">
+        theamericaalliance.org
+      </p>
+
+      <div style="text-align: center; margin-top: 25px;">
+        <button onclick="window.print()" style="background: #1b3a6b; color: white; border: none; padding: 12px 18px; border-radius: 10px; font-size: 16px; cursor: pointer;">
+          Print Flyer
+        </button>
+      </div>
+    </div>
+  `
+}
     };
 
-    function showTab(key) {
-      const tab = tabData[key];
-      document.getElementById("tab-content").innerHTML =
-        "<h3>" + tab.title + "</h3><p>" + tab.text + "</p>";
-    }
+   function showTab(key) {
+  const tab = tabData[key];
+
+  if (key === "flyer") {
+    document.getElementById("tab-content").innerHTML = tab.text;
+  } else {
+    document.getElementById("tab-content").innerHTML =
+      "<h3>" + tab.title + "</h3><p>" + tab.text + "</p>";
+  }
+}
   </script>
 </body>
 </html>
