@@ -2,7 +2,8 @@
   "name": "american-alliance-site",
   "private": true,
   "scripts": {
-    "build": "next build"
+    "build": "next build",
+    "dev": "next dev"
   },
   "dependencies": {
     "next": "14.2.35",
