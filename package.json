@@ -1,0 +1,12 @@
+{
+  "name": "american-alliance-site",
+  "private": true,
+  "scripts": {
+    "build": "next build"
+  },
+  "dependencies": {
+    "next": "14.2.30",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  }
+}
