@@ -11,51 +11,97 @@
       background: #f5f5f5;
       color: #111;
     }
-<header style="background: white; border-bottom: 2px solid #d9d9d9; position: sticky; top: 0; z-index: 1000;">
-  <div class="container" style="display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; padding-top: 14px; padding-bottom: 14px;">
-    <div style="display: flex; align-items: center; gap: 16px;">
-      <img src="logo.jpeg" alt="American Alliance Logo" style="height: 72px; width: auto; display: block;" />
 
-      <div>
-        <h1 style="margin: 0; font-size: 30px; line-height: 1.1; color: #0d2d62;">American Alliance</h1>
-        <p style="margin: 4px 0 0; font-size: 13px; color: #666; letter-spacing: 1.5px; text-transform: uppercase;">
-          Uniting for Tomorrow
-        </p>
-      </div>
-    </div>
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
 
-    <nav style="display: flex; gap: 24px; align-items: center; flex-wrap: wrap;">
-      <a href="#manifesto" style="color: #0d2d62; text-decoration: none; font-weight: bold;">Manifesto</a>
-      <a href="#stances" style="color: #0d2d62; text-decoration: none; font-weight: bold;">Stances</a>
-      <a href="#join" style="color: #0d2d62; text-decoration: none; font-weight: bold;">Get Involved</a>
-      <a href="https://discord.gg/nytSThatG" target="_blank" style="background: #c62839; color: white; text-decoration: none; font-weight: bold; padding: 10px 16px; border-radius: 10px;">
-        Join Discord
-      </a>
-    </nav>
-  </div>
-</header>
+    .hero, .section {
+      padding: 50px 0;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 14px;
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+
+    .buttons a, .tab-button {
+      display: inline-block;
+      margin: 8px 8px 0 0;
+      padding: 12px 16px;
+      border-radius: 10px;
+      text-decoration: none;
+      border: 1px solid #ccc;
+      background: white;
+      color: #111;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .buttons a.primary {
+      background: #111;
+      color: white;
+      border-color: #111;
+    }
+
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+
+    .tab-content {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 14px;
+      padding: 24px;
+    }
+
+    footer {
+      background: #111;
+      color: white;
+      padding: 40px 0;
+      margin-top: 30px;
+    }
+
+    footer a {
+      color: white;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
 <body>
-<header style="background: white; border-bottom: 2px solid #e5e5e5;">
-  <div class="container" style="display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
-    
-    <div style="display: flex; align-items: center; gap: 15px;">
- <img src="logo.jpeg" alt="American Alliance Logo" style="height: 60px;" />
-      <div>
-        <h1 style="margin: 0; font-size: 22px;">American Alliance</h1>
-        <p style="margin: 0; font-size: 12px; color: #666; letter-spacing: 1px;">
-          Uniting for Tomorrow
-        </p>
+  <header style="background: white; border-bottom: 2px solid #d9d9d9; position: sticky; top: 0; z-index: 1000;">
+    <div class="container" style="display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; padding-top: 14px; padding-bottom: 14px;">
+      <div style="display: flex; align-items: center; gap: 16px;">
+        <img src="logo.jpeg" alt="American Alliance Logo" style="height: 72px; width: auto; display: block;" />
+
+        <div>
+          <h1 style="margin: 0; font-size: 30px; line-height: 1.1; color: #0d2d62;">American Alliance</h1>
+          <p style="margin: 4px 0 0; font-size: 13px; color: #666; letter-spacing: 1.5px; text-transform: uppercase;">
+            Uniting for Tomorrow
+          </p>
+        </div>
       </div>
+
+      <nav style="display: flex; gap: 24px; align-items: center; flex-wrap: wrap;">
+        <a href="#manifesto" style="color: #0d2d62; text-decoration: none; font-weight: bold;">Manifesto</a>
+        <a href="#stances" style="color: #0d2d62; text-decoration: none; font-weight: bold;">Stances</a>
+        <a href="#join" style="color: #0d2d62; text-decoration: none; font-weight: bold;">Get Involved</a>
+        <a href="https://discord.gg/nytSThatG" target="_blank" style="background: #c62839; color: white; text-decoration: none; font-weight: bold; padding: 10px 16px; border-radius: 10px;">
+          Join Discord
+        </a>
+      </nav>
     </div>
-
-    <nav>
-      <a href="#manifesto">Manifesto</a>
-      <a href="#stances">Stances</a>
-      <a href="#join">Get Involved</a>
-    </nav>
-
-  </div>
-</header>
+  </header>
 
   <main class="container">
     <section class="hero">
@@ -98,7 +144,7 @@
         <button class="tab-button" onclick="showTab('healthcare')">Healthcare</button>
         <button class="tab-button" onclick="showTab('education')">Education</button>
         <button class="tab-button" onclick="showTab('environment')">Environment</button>
-        <button class="tab-button" onclick="showTab('rights')">Rights & Freedoms</button>
+        <button class="tab-button" onclick="showTab('rights')">Rights &amp; Freedoms</button>
         <button class="tab-button" onclick="showTab('foreign')">Foreign Policy</button>
       </div>
 
