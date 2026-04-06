@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>American Alliance Flyer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: white;
+      color: #111;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .flyer {
+      max-width: 700px;
+      width: 100%;
+      padding: 40px;
+      border: 2px solid #111;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 5px;
+    }
+
+    .tagline {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+
+    ul {
+      font-size: 18px;
+      line-height: 1.8;
+    }
+
+    .qr {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .print-btn {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    button {
+      background: #1b3a6b;
+      color: white;
+      border: none;
+      padding: 12px 18px;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    @media print {
+      button {
+        display: none;
+      }
+      body {
+        background: white;
+      }
+      .flyer {
+        border: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="flyer">
+    <h1>American Alliance</h1>
+    <div class="tagline">Uniting for Tomorrow</div>
+
+    <p style="text-align:center; font-weight:bold;">
+      A movement built by the people — not politicians.
+    </p>
+
+    <ul>
+      <li>Move beyond the two-party deadlock</li>
+      <li>Make everyday life affordable again</li>
+      <li>Hold the powerful accountable</li>
+      <li>Focus on real issues, not division</li>
+    </ul>
+
+    <p style="text-align:center; font-weight:bold;">
+      Scan to learn more:
+    </p>
+
+    <div class="qr">
+      <img src="flyer.png" style="max-width: 220px;" />
+    </div>
+
+    <p style="text-align:center;">
+      theamericaalliance.org
+    </p>
+
+    <div class="print-btn">
+      <button onclick="window.print()">Print Flyer</button>
+    </div>
+  </div>
+
+</body>
+</html>
